@@ -7,10 +7,9 @@ def main():
     print(':::::::::::::::::::::::::::')
     print('::: Stringer Calculator :::')
     print(':::::::::::::::::::::::::::')
-    print("\n\nThe calculations provided are based on residential guidelines from the 2021 International Building Code")
+    print("\nThe calculations provided are based on residential guidelines from the 2021 International Building Code\n")
 
     input_dimentions()
-
 
 
 '''
