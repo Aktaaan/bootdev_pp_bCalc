@@ -1,15 +1,11 @@
 #imperial.py
 #this will convert a float into a 
-
-
 class Imperial():
-	def __init__(self, str_dimension): #feet, inch, fract,
-		'''
-		self.feet = feet
+	def __init__(self, str_dimension, foot="", inch="", fraction=""): 
+		self.foot = foot
 		self.inch = inch
-		self.fract = fract
-		'''
-		self.str_dimension = str_dimension
+		self.fraction = fraction
+		self.seperator = ""
 
 	# Check if inputs were arch or float
 	def input_check(self):
@@ -18,43 +14,42 @@ class Imperial():
 		else: 
 			self.str_to_float(str_dimension)
 
-	def str_to_float(self):
+	def str_to_float():
 		pass
 
-	# takes str input and returns a float 
+		# takes str input and returns a float 
 	def convert_from_arch(self, str_dimension):
-		dirty_str_rip = self.str_dimension
-		str_rip = dirty_str_rip.strip(" ")
-		feet = ""
-		inch = ""
-		fraction = ""
-		seperator = ""
+		dirty_str_rip = str_dimension
+		str_rip = dirty_str_rip.replace(" ", "")
 
-		for pos in reversed(str_rip):
-			seperator += pos
-			if pos == '"':
-				if "/" in seperator:
-					fraction = seperator.replace('"', "")		
-				seperator = ""
-			if pos == "'":
-				inch = seperator.replace("'", "")
-				seperator = ""
+		def rip_n_shred(str_rip):
+			if not str_rip:
+				if self.seperator:
+					self.fraction = self.seperator
+					self.seperator = ""
+				return
+
+			char = str_rip[0]
+
+			if str_rip[0] == "'":
+				self.foot = self.seperator
+				self.seperator = ""
+			elif str_rip[0] == '"':
+				self.inch = self.seperator
+				self.seperator = ""
 			else:
-				feet = seperator
-				seperator = ""
-		print(f"Feet: {feet}\nInch: {inch}\nFraction: {fraction}")
-		return(feet, inch, fraction)
+				self.seperator += char
+				
+			return rip_n_shred(str_rip[1:])
 
-		# take (feet) numbers before "'" and turn them to inches
-
-
-		# take (inces) numbers and add them to 
-		float_dimension  = float(self.str_dimension)
+		rip_n_shred(str_rip)	
+		print(f"\nFoot: {self.foot}\nInch: {self.inch}\nFraction: {self.fraction}\n")
 		
 
 
 	# takes the kb input and feeds back tape measure values
 	# the input is a string, and is converted into architectural
-	def convert_to_arch(self):
+	def convert_to_arch():
 		str_dimension 
-		pass
+		pass 
+
