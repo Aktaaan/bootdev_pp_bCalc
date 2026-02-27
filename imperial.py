@@ -79,8 +79,11 @@ class Imperial():
 
 		self.f_measurement_inches = (f_foot * 12) + f_inch + f_fract
 
+		return self.f_measurement_inches
+
 		#print(f"\nFoot: {self.foot}\nInch: {self.inch}\nFraction: {self.fraction}\n")	
 		#print(f"Measurement in inches: {self.f_measurement_inches}")
+
 
 
 	# takes the kb input and feeds back tape measure values

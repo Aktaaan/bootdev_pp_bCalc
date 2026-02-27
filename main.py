@@ -12,10 +12,10 @@ def main():
     input_dimentions()
 
 
+main()
 
 '''
 def ramp_check():
     #max ramp slope is 8.33% slope or approximately 4.76°
     #IBC 1012.2 and ICC A117.1-2017
 '''
-main()
