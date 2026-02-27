@@ -5,13 +5,13 @@ def input_dimentions(): #rise, run, target_height, target_depth, tread_thickness
     valid_target_depth = False
     print("For archetectural input, use this format:")
     print("""4' 9" 3/16""")
-    #rise = input(f"What is the dimension of the rise?\n: ")
-    rise = """4' 3" 3/16"""
-    m = Imperial(rise)
-    return m.convert_from_arch(rise)
-    
-'''
+    rise = input(f"What is the dimension of the rise?\n: ")
+    ri = Imperial(rise)
+    f_rise = ri.convert_from_arch(rise)
+
     run = input(f"What is the dimension of the run?\n: ")
+    ru = Imperial(run)
+    f
         
     while valid_target_height == False:
         target_height = input(f'What is the target height of the stairs?\n(Source: IBC §1009.7.2, A-Mezz) 4-7":')

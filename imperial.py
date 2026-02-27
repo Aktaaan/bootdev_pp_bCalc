@@ -13,7 +13,7 @@ class Imperial():
 		self.f_measurement_inches = 0
 
 	# Check if inputs were arch or float
-	def input_check(self):
+	def check_in(self):
 		if "'" in self.str_dimension or '"' in self.str_dimension or "/" in self.str_dimension:
 			return self.convert_from_arch(str_dimension)
 		else: 
@@ -24,6 +24,7 @@ class Imperial():
 
 		# takes str input and returns a float 
 	def convert_from_arch(self, str_dimension):
+		# *Sublime Note* Section folded with ctrl + shift + [ or ]
 		dirty_str_rip = self.str_dimension
 		str_rip = dirty_str_rip.replace(" ", "")
 		rip_f = self.fraction
@@ -78,13 +79,13 @@ class Imperial():
 
 		self.f_measurement_inches = (f_foot * 12) + f_inch + f_fract
 
-		print(f"\nFoot: {self.foot}\nInch: {self.inch}\nFraction: {self.fraction}\n")	
-		print(f"Measurement in inches: {self.f_measurement_inches}")
+		#print(f"\nFoot: {self.foot}\nInch: {self.inch}\nFraction: {self.fraction}\n")	
+		#print(f"Measurement in inches: {self.f_measurement_inches}")
 
 
 	# takes the kb input and feeds back tape measure values
-	# the input is a string, and is converted into architectural
-	def convert_to_arch():
+	# the input is a float, and is converted into architectural
+	def convert_to_arch(self):
 		str_dimension 
 		pass 
 
