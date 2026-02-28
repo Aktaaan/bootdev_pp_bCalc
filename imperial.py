@@ -14,7 +14,7 @@ class Imperial():
 
 	# Check if inputs are valid and float or imperial measurement
 	def check_in(self, str_dimension):
-		valid_characters = (""" 123456789"'/.""")
+		valid_characters = (""" 123456789"'/.0""")
 		for char in str_dimension:
 			if char not in valid_characters:
 				raise Exception("Invalid characters entered")
@@ -37,7 +37,7 @@ class Imperial():
 		# takes str input and returns a float 
 	def convert_from_arch(self, str_dimension):
 		# *Sublime Note* Section folded with ctrl + shift + [ or ]
-		dirty_str_rip = self.str_dimension
+		dirty_str_rip = str_dimension
 		str_rip = dirty_str_rip.replace(" ", "")
 		rip_f = self.fraction
 

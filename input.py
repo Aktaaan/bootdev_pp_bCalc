@@ -19,7 +19,7 @@ def input_dimentions(): #rise, run, target_height, target_depth, tread_thickness
     while valid_target_height == False:
         target_height = input(f'What is the target height of the stairs?\n(Source: IBC §1009.7.2, A-Mezz) 4-7":')
         he = Imperial(target_height)
-        f_height = he.convert_from_arch(target_height)
+        f_height = he.check_in(target_height)
         print(f_height)
         if f_height >= 4:
             if f_height <= 7:
@@ -28,7 +28,7 @@ def input_dimentions(): #rise, run, target_height, target_depth, tread_thickness
     while valid_target_depth == False:
         target_depth = input(f'What is the target depth of the stairs?\n((Source: IBC §1009.7.2, A-Mezz) 11" minimum:')
         de = Imperial(target_depth)
-        f_depth = de.convert_from_arch(target_depth)
+        f_depth = de.check_in(target_depth)
         print(f_depth)
         if f_depth >= 11:
             if f_depth > 84:
@@ -38,7 +38,7 @@ def input_dimentions(): #rise, run, target_height, target_depth, tread_thickness
 
     tread_thickness = input(f"How thick is the material for the treads?\n:")
     tr = Imperial(tread_thickness)
-    f_tread = tr.convert_from_arch(tread_thickness)
+    f_tread = tr.check_in(tread_thickness)
     print(f_tread)
 
     st = Stairs(f_rise, f_height, f_depth, f_tread)
