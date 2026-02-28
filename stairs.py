@@ -20,7 +20,9 @@ class Stairs():
 
     def calc_stairs(self, f_rise, f_height, f_depth, f_tread):
         #get number of steps
-        float_of_steps = f_rise / (f_height - f_tread)
+        adjusted_rise = f_rise - (f_height + f_tread)
+        #adjusted_height = f_height - f_tread
+        float_of_steps = adjusted_rise / f_height
         truncated_numstp = math.trunc(float_of_steps)
         number_of_steps = truncated_numstp
         
@@ -46,10 +48,11 @@ class Stairs():
         lor_inches = lor_inch_all - (lor_foot * 12)
 
         print(f'\n')
+        print(f"Number of steps on stringer: {number_of_steps}")
+        print(f"Number of steps: {number_of_steps + 1}")
         print(f'Rise: {f_rise}"')
-        print(f"Number of steps: {number_of_steps}")
         print(f'Height of steps: {sos_inch}" {sos_sxtnth}')
-        print(f'Depth of steps: {dep_inch}" {dep_sxtnth}') # this is incomplete
+        print(f'Depth of steps: {dep_inch}" {dep_sxtnth}')
         print(f"""Length of run: {lor_foot}' {lor_inches}" {lor_sxtnth}""")
 
     def inch_to_feet(inches):
