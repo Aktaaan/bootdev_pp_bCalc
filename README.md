@@ -6,3 +6,5 @@ A stringer calculator that takes the height between floors, desired height of in
 + The calculated height of each step
 + The depth of each step
 + The run of the entire staircase
+
+this is my personal project for my Boot.dev course.
