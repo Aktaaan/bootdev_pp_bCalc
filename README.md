@@ -1,10 +1,7 @@
-A stringer calculator that takes these inputs:
-length (run)
-height (rise)
-d_step(depth of step) - goal
-h_step(height of step) -goal
-
-Using those inputs it will calculate the number of stairs and actual values for stair height and depth.
-
- Issues:
- inputing incorrectly formatted information can result in unxepected bheavior that do not cause an error.
+A stringer calculator that takes the height between floors, desired height of individual stairs, desired tread depth of each stair, calculates and returns:
+The number of stairs needed on the stringer
+The number of stairs total
+The rise the user input
+The calculated height of each step
+The depth of each step
+The run of the entire staircase
