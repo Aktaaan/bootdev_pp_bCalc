@@ -15,9 +15,9 @@ class Imperial():
 	# Check if inputs were arch or float
 	def check_in(self):
 		if "'" in self.str_dimension or '"' in self.str_dimension or "/" in self.str_dimension:
-			return self.convert_from_arch(str_dimension)
+			return self.convert_from_arch(self.str_dimension)
 		else: 
-			self.str_to_float(str_dimension)
+			self.str_to_float(self.str_dimension)
 
 	def str_to_float():
 		pass

@@ -1,4 +1,5 @@
 from imperial import Imperial
+from stairs import Stairs
 
 def input_dimentions(): #rise, run, target_height, target_depth, tread_thickness
     valid_target_height = False
@@ -10,10 +11,10 @@ def input_dimentions(): #rise, run, target_height, target_depth, tread_thickness
     f_rise = ri.convert_from_arch(rise)
     print(f_rise)
 
-    run = input(f"What is the dimension of the run?\n: ")
-    ru = Imperial(run)
-    f_run = ru.convert_from_arch(run) 
-    print(f_run)
+    #run = input(f"What is the dimension of the run?\n: ")
+    #ru = Imperial(run)
+    #f_run = ru.convert_from_arch(run) 
+    #print(f_run)
         
     while valid_target_height == False:
         target_height = input(f'What is the target height of the stairs?\n(Source: IBC §1009.7.2, A-Mezz) 4-7":')

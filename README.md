@@ -6,4 +6,5 @@ h_step(height of step) -goal
 
 Using those inputs it will calculate the number of stairs and actual values for stair height and depth.
 
- 
+ Issues:
+ inputing incorrectly formatted information can result in unxepected bheavior that do not cause an error.
