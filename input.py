@@ -8,7 +8,7 @@ def input_dimentions(): #rise, run, target_height, target_depth, tread_thickness
     print("""4' 9" 3/16""")
     rise = input(f"What is the dimension of the rise?\n: ")
     ri = Imperial(rise)
-    f_rise = ri.convert_from_arch(rise)
+    f_rise = ri.check_in(rise)
     print(f_rise)
 
     #run = input(f"What is the dimension of the run?\n: ")
@@ -21,8 +21,8 @@ def input_dimentions(): #rise, run, target_height, target_depth, tread_thickness
         he = Imperial(target_height)
         f_height = he.convert_from_arch(target_height)
         print(f_height)
-        if f_height > 4:
-            if f_height < 7:
+        if f_height >= 4:
+            if f_height <= 7:
                 break
 
     while valid_target_depth == False:
@@ -30,7 +30,7 @@ def input_dimentions(): #rise, run, target_height, target_depth, tread_thickness
         de = Imperial(target_depth)
         f_depth = de.convert_from_arch(target_depth)
         print(f_depth)
-        if f_depth > 11:
+        if f_depth >= 11:
             if f_depth > 84:
                 print("The maximum slope for a ramp is 8.33%\n (Source: IBC 1012.2 and ICC A117.1-2017)")
             elif f_depth < 84:
@@ -41,5 +41,7 @@ def input_dimentions(): #rise, run, target_height, target_depth, tread_thickness
     f_tread = tr.convert_from_arch(tread_thickness)
     print(f_tread)
 
+    st = Stairs(f_rise, f_height, f_depth, f_tread)
+    result = st.calc_stairs(f_rise, f_height, f_depth, f_tread)
 
-    return (f_rise, f_run, f_height, f_depth, f_tread)
+    return (f_rise, f_height, f_depth, f_tread)

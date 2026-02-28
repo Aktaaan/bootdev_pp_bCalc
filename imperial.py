@@ -12,15 +12,21 @@ class Imperial():
 		self.seperator = ""
 		self.f_measurement_inches = 0
 
-	# Check if inputs were arch or float
-	def check_in(self):
-		if "'" in self.str_dimension or '"' in self.str_dimension or "/" in self.str_dimension:
-			return self.convert_from_arch(self.str_dimension)
-		else: 
-			self.str_to_float(self.str_dimension)
+	# Check if inputs are valid and float or imperial measurement
+	def check_in(self, str_dimension):
+		valid_characters = (""" 123456789"'/.""")
+		for char in str_dimension:
+			if char not in valid_characters:
+				raise Exception("Invalid characters entered")
 
-	def str_to_float():
-		pass
+		if float(str_dimension):
+			float_dimension = float(str_dimension)
+			return float_dimension
+		else:
+			if "'" in self.str_dimension or '"' in self.str_dimension or "/" in self.str_dimension:
+				return self.convert_from_arch(self.str_dimension)
+		# all other conditions should be gone?
+
 
 		# takes str input and returns a float 
 	def convert_from_arch(self, str_dimension):
@@ -78,17 +84,11 @@ class Imperial():
 			f_inch = 0
 
 		self.f_measurement_inches = (f_foot * 12) + f_inch + f_fract
-
 		return self.f_measurement_inches
-
-		#print(f"\nFoot: {self.foot}\nInch: {self.inch}\nFraction: {self.fraction}\n")	
-		#print(f"Measurement in inches: {self.f_measurement_inches}")
-
-
 
 	# takes the kb input and feeds back tape measure values
 	# the input is a float, and is converted into architectural
+	
 	def convert_to_arch(self):
-		str_dimension 
+		# this was simpler to do directly in the stair calculations 
 		pass 
-
