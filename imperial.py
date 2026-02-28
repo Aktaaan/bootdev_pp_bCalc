@@ -19,12 +19,18 @@ class Imperial():
 			if char not in valid_characters:
 				raise Exception("Invalid characters entered")
 
-		if float(str_dimension):
-			float_dimension = float(str_dimension)
-			return float_dimension
+
+		if "'" in self.str_dimension or '"' in self.str_dimension or "/" in self.str_dimension:
+			return self.convert_from_arch(self.str_dimension)
+
+		# if no architectural markers:
 		else:
-			if "'" in self.str_dimension or '"' in self.str_dimension or "/" in self.str_dimension:
-				return self.convert_from_arch(self.str_dimension)
+			# Treat as a plain float (assume inches)
+			try:
+				float_dimension = float(str_dimension)
+				return float_dimension
+			except ValueError:
+				raise Exception("Invalid characters entered")			
 		# all other conditions should be gone?
 
 
