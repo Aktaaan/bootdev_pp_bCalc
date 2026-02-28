@@ -20,8 +20,8 @@ class Imperial():
 				raise Exception("Invalid characters entered")
 
 
-		if "'" in self.str_dimension or '"' in self.str_dimension or "/" in self.str_dimension:
-			return self.convert_from_arch(self.str_dimension)
+		if "'" in str_dimension or '"' in str_dimension or "/" in str_dimension:
+			return self.convert_from_arch(str_dimension)
 
 		# if no architectural markers:
 		else:
