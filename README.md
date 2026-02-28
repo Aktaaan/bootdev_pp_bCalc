@@ -1,4 +1,4 @@
-#Stringer Calculator
+# Stringer Calculator
 A stringer calculator that takes the height between floors, desired height of individual stairs, desired tread depth of each stair, calculates and returns:
 + The number of stairs needed on the stringer
 + The number of stairs total
